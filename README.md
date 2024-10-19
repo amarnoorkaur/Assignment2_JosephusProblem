@@ -11,7 +11,7 @@ October 18th, 2024
 # Introduction
 Our group chose the task of implementing a visualization of the Josephus problem for an input size of 100. The Josephus problem is a mathematical puzzle inspired by Jewish soldier and historian Josephus Flavius (Shúilleabháin et al., 2019, p. 6). In the Josephus problem, people are formed in a circle, and each member is sequentially eliminated until one final member remains. Given an input size of 100 participants, our goal was to find and visualize the one final remaining participant who was not eliminated. With this goal, a solution was created in Python by using:
 
-The Josephus formula, a method for calculating the final surviving participant based on the largest power of 2 ≤ n the number of participants
+The Josephus formula, a method for calculating the final surviving participant based on the largest power of 2 ≤ _n_ the number of participants
 Binary rotation, which shifts the leftmost bit of the binary representation of the number of participants, converting to decimal to show the final survivor in the circle
 By implementing both methods, the correct solution was provided successfully, enabling us to accurately visualize the elimination process and identify the last remaining person in a group of 100 participants.
 
@@ -19,7 +19,7 @@ By implementing both methods, the correct solution was provided successfully, en
 The challenge of the Josephus problem is to determine which position the last remaining participant will be in a circle of 100 people. To find the last remaining participant, we implemented two different methods in python, the Josephus formula and binary rotation.
 
 ### josephus_formula Method:
-Finds the position of the last participant who is not eliminated in the circle by using bitwise operations to identify the largest power of 2 ≤ n the total number of participants, then calculates the remaining participants and applies a formula to determine the safe position.
+Finds the position of the last participant who is not eliminated in the circle by using bitwise operations to identify the largest power of 2 ≤ _n) the total number of participants, then calculates the remaining participants and applies a formula to determine the safe position.
 
 The Josephus formula is as follows:  
 _w: position of the final participant who has not been eliminated_  
@@ -34,7 +34,7 @@ _m: exponent of the largest power of 2 ≤ n_
 > _return 2 * leftover_participants + 1_  
 
 ### binary_rotation Method
-Converts the number of participants, n, into a binary string, rotates the bits, and then converts the string back to decimal form to determine the position of the last participant.
+Converts the number of participants, _n_, into a binary string, rotates the bits, and then converts the string back to decimal form to determine the position of the last participant.
 
 **Pseudocode of josephus_formula Method**  
 > _binary_str = binary representation of n removing ‘0b’ prefix_     
