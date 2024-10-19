@@ -5,21 +5,21 @@ from tkinter import ttk
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import time
 
-# Core Josephus formula with detailed step-by-step breakdown
+# Josephus formula function with detailed breakdown
 def josephus_formula_detailed(n):
-    largest_power_of_two = 1 << (n.bit_length() - 1)  # Find the largest power of 2 <= n
-    l = n - largest_power_of_two  # Calculate the difference
-    winning_position = 2 * l + 1  # Apply Josephus formula
+    largest_power_of_two = 1 << (n.bit_length() - 1)
+    l = n - largest_power_of_two
+    winning_position = 2 * l + 1
     return winning_position, largest_power_of_two, l
 
-# Binary rotation function as an alternative perspective
+# Binary rotation function
 def binary_rotation(n):
-    binary_str = bin(n)[2:]  # Binary representation
-    rotated_binary_str = binary_str[1:] + binary_str[0]  # Rotate the binary string
-    rotated_decimal = int(rotated_binary_str, 2)  # Convert rotated binary string back to decimal
+    binary_str = bin(n)[2:]
+    rotated_binary_str = binary_str[1:] + binary_str[0]
+    rotated_decimal = int(rotated_binary_str, 2)
     return rotated_decimal, binary_str, rotated_binary_str
 
-# Visualization with detailed Josephus formula explanations
+# Josephus visualization with optimized layout and UI
 def josephus_problem_visualization(n, canvas, fig, formula_label, binary_label, root):
     people = list(range(1, n + 1))
     alive = [True] * n
@@ -27,11 +27,11 @@ def josephus_problem_visualization(n, canvas, fig, formula_label, binary_label, 
     ax = fig.add_subplot(111)
     lines = []
 
-    # Adjust sizing dynamically
+    # Set dynamic sizing for readability
     screen_height = root.winfo_screenheight()
-    max_circle_diameter = 0.6 * screen_height  # Use 60% of screen height for circle diameter
+    max_circle_diameter = 0.8 * screen_height  # Optimize figure to take 80% of screen height
     circle_radius = max_circle_diameter / 2 / 100
-    point_size = 7000 / n if n > 25 else 500  # Adjust point size based on number of people
+    point_size = 8000 / n if n > 30 else 600
 
     def update_plots(alive, round_num, eliminator, eliminated):
         ax.clear()
@@ -43,32 +43,32 @@ def josephus_problem_visualization(n, canvas, fig, formula_label, binary_label, 
         for i, person in enumerate(people):
             color = 'yellow' if alive[i] else 'grey'
             ax.scatter(x[i], y[i], s=point_size, color=color, edgecolors='black')
-            ax.text(x[i], y[i], str(person), ha='center', va='center', color='black', fontsize=10)
+            ax.text(x[i], y[i], str(person), ha='center', va='center', color='black', fontsize=12)
 
             if not alive[i]:
-                ax.text(x[i], y[i], 'X', ha='center', va='center', color='white', fontsize=14, fontweight='bold')
+                ax.text(x[i], y[i], 'X', ha='center', va='center', color='white', fontsize=16, fontweight='bold')
 
         # Dotted line to show who eliminates whom
         if eliminator is not None and eliminated is not None:
             line, = ax.plot([x[eliminator], x[eliminated]], 
                             [y[eliminator], y[eliminated]], 
-                            linestyle=':', color='blue', linewidth=1.5)
+                            linestyle=':', color='blue', linewidth=2)
             lines.append(line)
 
         for line in lines:
-            line.set_linestyle('--')
-            line.set_alpha(0.4)
+            line.set_linestyle('-')
+            line.set_alpha(0.5)
 
-        # Dynamic title update for each elimination round
+        # Update title based on elimination round or final result
         if eliminator is not None and eliminated is not None:
-            ax.set_title(f"Round {round_num}: {people[eliminator]} eliminates {people[eliminated]}")
+            ax.set_title(f"Round {round_num}: {people[eliminator]} eliminates {people[eliminated]}", fontsize=16)
         else:
-            ax.set_title(f"Final: {people[alive.index(True)]}" if alive.count(True) == 1 else f"Round {round_num}")
+            ax.set_title(f"Final: {people[alive.index(True)]}", fontsize=16)
 
         ax.set_aspect('equal')
         ax.axis('off')
 
-        # Josephus formula breakdown for the current scenario
+        # Josephus formula breakdown displayed
         winner_formula, largest_power_of_two, l = josephus_formula_detailed(n)
         formula_text = (f"Given n = {n}, find largest 2^a ≤ n:\n"
                         f"2^a = {largest_power_of_two}\n"
@@ -76,7 +76,7 @@ def josephus_problem_visualization(n, canvas, fig, formula_label, binary_label, 
                         f"Winning Position: W(n) = 2 * {l} + 1 = {winner_formula}")
         formula_label.config(text=f"Josephus Formula\n{formula_text}")
 
-        # Binary rotation breakdown
+        # Binary rotation breakdown displayed
         winner_binary, original_binary, rotated_binary = binary_rotation(n)
         binary_text = (f"Original: {original_binary}\n"
                        f"Rotated: {rotated_binary}\n"
@@ -114,11 +114,12 @@ def josephus_problem_visualization(n, canvas, fig, formula_label, binary_label, 
 
     update_plots(alive, "Final", eliminator, None)
 
-# GUI setup
+# Refined layout with improved spacing and design
 def on_start():
     n = int(entry.get())
     josephus_problem_visualization(n, canvas, fig, formula_label, binary_label, root)
 
+# Tkinter window setup with optimized UI layout
 root = tk.Tk()
 root.title("Josephus Problem Visualization")
 
@@ -127,6 +128,7 @@ frame.grid(row=0, column=0, sticky="nsew")
 root.columnconfigure(0, weight=1)
 root.rowconfigure(0, weight=1)
 
+# Input area setup
 input_frame = ttk.Frame(frame)
 input_frame.grid(row=0, column=0, sticky="ew")
 
@@ -136,18 +138,20 @@ entry.grid(row=0, column=1, padx=5, pady=5)
 start_button = ttk.Button(input_frame, text="Start", command=on_start)
 start_button.grid(row=0, column=2, padx=5, pady=5)
 
-# Side panel for detailed explanations
+# Side panel for explanations
 side_frame = ttk.Frame(frame)
 side_frame.grid(row=1, column=1, sticky="ns", padx=10)
 
-formula_label = ttk.Label(side_frame, text="Josephus Formula", font=("Arial", 10, "bold"), padding="10", justify="left")
-formula_label.grid(row=0, column=0, sticky="nsew", padx=5, pady=5)
+# Josephus formula explanation with larger font
+formula_label = ttk.Label(side_frame, text="Josephus Formula", font=("Arial", 12, "bold"), padding="10", justify="left", relief="groove")
+formula_label.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
 
-binary_label = ttk.Label(side_frame, text="Binary Rotation", font=("Arial", 10, "bold"), padding="10", justify="left")
-binary_label.grid(row=1, column=0, sticky="nsew", padx=5, pady=5)
+# Binary rotation explanation with panel borders for separation
+binary_label = ttk.Label(side_frame, text="Binary Rotation", font=("Arial", 12, "bold"), padding="10", justify="left", relief="groove")
+binary_label.grid(row=1, column=0, sticky="nsew", padx=10, pady=10)
 
-# Matplotlib figure embedded into Tkinter
-fig = plt.Figure(figsize=(10, 8))
+# Main figure area for the circular visualization
+fig = plt.Figure(figsize=(12, 10))
 canvas = FigureCanvasTkAgg(fig, master=frame)
 canvas.get_tk_widget().grid(row=1, column=0, sticky="nsew")
 
