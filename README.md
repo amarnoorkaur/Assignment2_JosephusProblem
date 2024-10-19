@@ -69,3 +69,9 @@ The following are the implementation of the two methods in python for finding th
 Regan, R. (2009, July 24). Powers of two in the Josephus problem - exploring binary. Exploring Binary. https://www.exploringbinary.com/powers-of-two-in-the-josephus-problem/   
   
 Shúilleabháin, A. N., Cronin, A., Beirne, P., & Lewanowski-Breen, E. (Eds.). (2019). MATHS SPARKS VOL III. University College Dublin. https://www.ucd.ie/mathstat/t4media/SPARKS_FINALVol3.pdf  
+
+GeeksforGeeks. (2022b, November 15). Josephus problem using bit magic. GeeksforGeeks. https://www.geeksforgeeks.org/josephus-problem-using-bit-magic/  
+
+Numberphile. (2016, October 28). The Josephus Problem - Numberphile [Video]. YouTube. https://www.youtube.com/watch?v=uCsD3ZGzMgE  
+
+NeuralNine. (2021, September 29). Tkinter Beginner course - Python GUI Development [Video]. YouTube. https://www.youtube.com/watch?v=ibf5cx221hk  
