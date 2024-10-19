@@ -44,4 +44,4 @@ so the 19th person is  going to be the winner
 
 
 The winner can also be found using binary:(GeeksforGeeks. (2022, November 15). Josephus problem using bit magic. GeeksforGeeks. https://www.geeksforgeeks.org/josephus-problem-using-bit-magic/)
-=> shift the leftmost digit to the right end and convert it into the decimal number, that number is the answer
+=> shift the leftmost digit to the right end and convert the resulting number into the decimal number, that number is the answer
