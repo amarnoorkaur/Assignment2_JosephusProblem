@@ -29,17 +29,17 @@ _m: exponent of the largest power of 2 ≤ n_
 (Regan, 2009)  
 
 **Pseudocode of josephus_formula Method**  
-max_power_of_two = largest power of 2 ≤ to n  
-leftover_participants = n – max_power_of_two  
-return 2 * leftover_participants + 1  
+> _max_power_of_two = largest power of 2 ≤ to n_  
+> _leftover_participants = n – max_power_of_two_  
+> _return 2 * leftover_participants + 1_  
 
 ### binary_rotation Method
 Converts the number of participants, n, into a binary string, rotates the bits, and then converts the string back to decimal form to determine the position of the last participant.
 
-**Pseudocode of josephus_formula Method**
-binary_str = binary representation of n removing ‘0b’ prefix  
-rotated_binary_str = rotated leftmost bit of the binary string  
-return decimal form of rotated binary string  
+**Pseudocode of josephus_formula Method**  
+> _binary_str = binary representation of n removing ‘0b’ prefix_     
+> _rotated_binary_str = rotated leftmost bit of the binary string_   
+> _return decimal form of rotated binary string_  
 
 # Implementation
 The following are the implementation of the two methods in python for finding the solution to the Josephus problem with an input size of 100 participants.
@@ -62,7 +62,10 @@ The following are the implementation of the two methods in python for finding th
     #Convert rotated binary string back to a decimal number  
     return int(rotated_binary_str  
 
-# References  
+# Visualization  
+
+# References   
+
 Regan, R. (2009, July 24). Powers of two in the Josephus problem - exploring binary. Exploring Binary. https://www.exploringbinary.com/powers-of-two-in-the-josephus-problem/   
   
 Shúilleabháin, A. N., Cronin, A., Beirne, P., & Lewanowski-Breen, E. (Eds.). (2019). MATHS SPARKS VOL III. University College Dublin. https://www.ucd.ie/mathstat/t4media/SPARKS_FINALVol3.pdf  
