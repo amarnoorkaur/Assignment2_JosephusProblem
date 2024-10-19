@@ -66,30 +66,34 @@ The following are the implementation of the two methods in python for finding th
 
 The final result of the Josephus problem visualization. It illustrates the elimination process step by step with the Josephus Formula and Binary Rotation on the right side panel.  
 
-![80173](https://github.com/user-attachments/assets/26f58077-e2ab-428a-ab83-bb35f4350b67)
+Example 1) 17 Participants   
+  
+![80173](https://github.com/user-attachments/assets/26f58077-e2ab-428a-ab83-bb35f4350b67)  
 
-Example 1) 7 Participants  
+Example 2) 7 Participants  
 
 ![641bd919-34df-4270-a999-dcde8f41c5f4](https://github.com/user-attachments/assets/ee71fff8-a2bc-4fb4-9d8a-d46b9756e28a)
 
 
-Example 2) 41 Participants  
+Example 3) 41 Participants  
 
 ![0ce21df1-192f-4710-9921-01c7a55efb01](https://github.com/user-attachments/assets/eea4bea3-2907-462f-b15c-6ee073658e95)
 
-Example 3) 100 Participants  
+Example 4) 100 Participants  
   
 ![ffd8bc60-a2f7-4f78-8f48-35e1836fc74b](https://github.com/user-attachments/assets/c6aa71b3-5497-40b5-9739-8840d7a30ebf)
 
 
 # References   
 
-Regan, R. (2009, July 24). Powers of two in the Josephus problem - exploring binary. Exploring Binary. https://www.exploringbinary.com/powers-of-two-in-the-josephus-problem/   
-  
-Shúilleabháin, A. N., Cronin, A., Beirne, P., & Lewanowski-Breen, E. (Eds.). (2019). MATHS SPARKS VOL III. University College Dublin. https://www.ucd.ie/mathstat/t4media/SPARKS_FINALVol3.pdf  
-
 GeeksforGeeks. (2022b, November 15). Josephus problem using bit magic. GeeksforGeeks. https://www.geeksforgeeks.org/josephus-problem-using-bit-magic/  
 
 Numberphile. (2016, October 28). The Josephus Problem - Numberphile [Video]. YouTube. https://www.youtube.com/watch?v=uCsD3ZGzMgE  
 
 NeuralNine. (2021, September 29). Tkinter Beginner course - Python GUI Development [Video]. YouTube. https://www.youtube.com/watch?v=ibf5cx221hk  
+
+Regan, R. (2009, July 24). Powers of two in the Josephus problem - exploring binary. Exploring Binary. https://www.exploringbinary.com/powers-of-two-in-the-josephus-problem/   
+  
+Shúilleabháin, A. N., Cronin, A., Beirne, P., & Lewanowski-Breen, E. (Eds.). (2019). MATHS SPARKS VOL III. University College Dublin. https://www.ucd.ie/mathstat/t4media/SPARKS_FINALVol3.pdf  
+
+
