@@ -64,6 +64,10 @@ The following are the implementation of the two methods in python for finding th
 
 # Visualization  
 
+The final result of the Josephus problem visualization. It illustrates the elimination process step by step with the Josephus Formula and Binary Rotation on the right side panel.  
+
+![80173](https://github.com/user-attachments/assets/26f58077-e2ab-428a-ab83-bb35f4350b67)
+
 # References   
 
 Regan, R. (2009, July 24). Powers of two in the Josephus problem - exploring binary. Exploring Binary. https://www.exploringbinary.com/powers-of-two-in-the-josephus-problem/   
