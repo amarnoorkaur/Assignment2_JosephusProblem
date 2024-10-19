@@ -1,0 +1,47 @@
+Reference:
+Numberphile. (2016, October 28). The Josephus Problem - Numberphile [Video]. YouTube. https://www.youtube.com/watch?v=uCsD3ZGzMgE  --> inference from the video and research:
+1) All the even one's are killed first
+2) The last person to survive is always odd
+
+OUTPUTS:
+(n) --> winner
+1 --> 1
+2 --> 1
+3 --> 3
+4 --> 1
+5 --> 3
+6 --> 5
+7 --> 7
+8 --> 1
+9 --> 3 
+10 --> 5
+11 --> 7
+12--> 9
+13 --> 11
+
+Observation:
+1) Powers of 2 give 1 as the last person who survived
+if n = (2)^a
+then winner is the first person
+2) For the numbers between the powers of 2 the output increases by 2 until it reaches the next power of 2 where it resets to 1 again
+
+Guess for the outputs based on our observation for 1 to 13 inputs:
+let's take 79 as input and try to make an educated guess for this number:
+79 = 64 + 8 +4+2+1
+   = 2^6 +15
+for 2^6 the output will be 1 
+for 15
+15 = 8+7
+   = 2^3 +7
+=> after l steps it's the turn of 2l + 1 and after l steps, there are a power of two number of people left, then the first person who kills is going to be the person who survives and is the winner 
+
+
+example 2 )
+if 41 people
+41 = 32 +9
+so 9*2+1 = 19
+so the 19th person is  going to be the winner
+
+
+The winner can also be found using binary:(GeeksforGeeks. (2022, November 15). Josephus problem using bit magic. GeeksforGeeks. https://www.geeksforgeeks.org/josephus-problem-using-bit-magic/)
+=> shift the leftmost digit to the right end and convert it into the decimal number, that number is the answer
